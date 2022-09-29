@@ -15,11 +15,13 @@ export class HouseDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private houseService: HouseService) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-          this.houseId = params['id'];  
-          this.houseService.getHouseById(this.houseId).subscribe(house =>{    
-            this.house = house; 
-        })  
-      })
+    debugger;
+    this.houseId = this.route.snapshot.paramMap.get('id') ?  Number(this.route.snapshot.paramMap.get('id')) : 0;
+    this.houseService.getHouseById(this.houseId).subscribe(house =>{    
+      this.house = house; 
+    })  
+    
+  
     }
+   
   }
