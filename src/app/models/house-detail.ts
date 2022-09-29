@@ -92,6 +92,8 @@ export type Images = {
 
 export type ReviewScores = {}
 
+////CONSTANTS////
+
 export const DEFAULT_LOCATION : Location = {
   coordinates: [0],
   is_location_exact: false,
@@ -182,5 +184,3 @@ export const DEFAULT_DETAIL_HOUSE : HouseDetail = {
   summary: "",
   transit: "",
 } 
-
-
