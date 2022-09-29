@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'detail',
     loadChildren: () => import('./house-detail/house-detail-routing.module').then(m => m.HouseDetailRoutingModule)
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
