@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: ':id',
     component: HouseDetailComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/', pathMatch: 'full'
   }
 ];
 
