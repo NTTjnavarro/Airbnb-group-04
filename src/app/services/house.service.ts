@@ -17,8 +17,13 @@ export class HouseService {
       return this.httpClient.get<HouseDetail>(environment.apiUrl+'/listings/'+id);
   }
 
-  getHousesData(position: GeoLocationModel): Observable<HouseDetail[]>{
-    return this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', position)
+  getHousesData(): Observable<HouseDetail[]>{
+    return this.generateCurrentPosition().pipe(
+      switchMap(
+        position => this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', position)
+      )
+    )
+    
   }
 
   generateCurrentPosition(): Observable<GeoLocationModel>{
@@ -41,12 +46,6 @@ export class HouseService {
         }
       );
     });
-  }
-
-  getHousesList(): Observable<HouseDetail[]>{
-    return this.generateCurrentPosition().pipe(
-      switchMap(this.getHousesData.bind(this))
-    )
   }
 
 }
