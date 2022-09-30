@@ -1,6 +1,6 @@
 ////TYPES////
 export type  HouseDetail = {
-  _id: string;
+  _id: number;
   access: string;
   accommodates: number;
   address: Address;
@@ -146,7 +146,7 @@ export const DEFAULT_IMAGES : Images = {
 export const DEFAULT_REVIEW_SCORES : ReviewScores = {}
 
 export const DEFAULT_DETAIL_HOUSE : HouseDetail = {
-  _id: "",
+  _id: 10082422,
   access: "",
   accommodates: 0,
   address: DEFAULT_ADDRESS,

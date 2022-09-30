@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DEFAULT_DETAIL_HOUSE } from 'src/app/models/house-detail';
 
 import { HouseDetailComponent } from './house-detail.component';
 
@@ -23,6 +24,10 @@ describe('HouseDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('get house data', ()=>{
+    component.getDetailHouse(DEFAULT_DETAIL_HOUSE._id)
   });
 
 });
