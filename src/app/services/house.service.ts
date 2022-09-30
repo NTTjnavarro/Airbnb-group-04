@@ -16,8 +16,8 @@ export class HouseService {
       return this.httpClient.get<HouseDetail>(environment.apiUrl+'/listings/'+id);
     }
 
-  getHousesList(position: GeoLocationModel){
-    return this.httpClient.post(environment.apiUrl, position)
+  getHousesList(position: GeoLocationModel):Observable<GeoLocationModel>{
+    return this.httpClient.post<GeoLocationModel>(environment.apiUrl+'/search', position)
   }
 
 }
