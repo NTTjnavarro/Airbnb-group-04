@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GeoLocationModel } from 'src/app/models/geoLocation.model';
+import { DEFAULT_GEO_LOCATION, GeoLocationModel, getCurrentPosition } from 'src/app/models/geoLocation.model';
 
 @Component({
   selector: 'app-house-list',
@@ -8,27 +8,23 @@ import { GeoLocationModel } from 'src/app/models/geoLocation.model';
 })
 export class HouseListComponent implements OnInit {
 
-  private currentPosition: GeoLocationModel = {
-    position: {
-      lat: 0,
-      lng: 0
-    }
-  }
-
+  private currentPosition: GeoLocationModel = DEFAULT_GEO_LOCATION;
+  isLoading:boolean = true;
   constructor() { }
 
   ngOnInit(): void {
     this.generateCurrentPosition()
   }
 
-  generateCurrentPosition(){
-    navigator.geolocation.getCurrentPosition((position) => {
+  generateCurrentPosition():void{
+    navigator.geolocation.getCurrentPosition((position: getCurrentPosition) => {
       this.currentPosition = {
         position:{
           lat: position.coords.latitude,
           lng: position.coords.longitude
         }
       }
+      this.isLoading = false;
     })
   }
 
