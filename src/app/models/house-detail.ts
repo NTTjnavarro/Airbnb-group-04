@@ -1,4 +1,6 @@
 ////TYPES////
+export type  HouseList = HouseDetail[];
+
 export type  HouseDetail = {
   _id: number;
   access: string;
