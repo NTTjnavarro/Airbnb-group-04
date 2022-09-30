@@ -25,6 +25,7 @@ export class HouseDetailComponent implements OnInit {
     private getDetailHouse(id:number){
       this.houseService.getHouseById(id).subscribe({
         next: (house:HouseDetail) =>{
+          console.log(house);
           this.house = house;
           this.isLoading = false;
         },
