@@ -1,9 +1,9 @@
+<div *ngIf="!isLoading">
+  {{ house.name }}
+  <p-button label="Click"></p-button>
+  <app-reserve></app-reserve>
+  <app-evaluations></app-evaluations>
+  <app-map></app-map>
+  <app-host></app-host>
+</div>
 
-  <div *ngIf="!isLoading">
-    {{ house.name }}
-
-    <app-reserve></app-reserve>
-    <app-evaluations></app-evaluations>
-    <app-map></app-map>
-    <app-host></app-host>
-  </div>
