@@ -1,6 +1,8 @@
+export type position = {
+    lat: number,
+    lng: number
+}
+
 export type GeoLocationModel = {
-    position: {
-        lat: number,
-        lng: number
-    }
+    position: position
 }
