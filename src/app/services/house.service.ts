@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HouseDetail } from 'src/app/models/house-detail';
 import { environment } from 'src/environments/environment';
+import { GeoLocationModel } from '../models/geoLocation.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HouseService {
 
@@ -14,4 +15,9 @@ export class HouseService {
     ): Observable<HouseDetail> {
       return this.httpClient.get<HouseDetail>(environment.apiUrl+'/listings/'+id);
     }
+
+  getHousesList(position: GeoLocationModel){
+    return this.httpClient.post(environment.apiUrl, position)
+  }
+
 }
