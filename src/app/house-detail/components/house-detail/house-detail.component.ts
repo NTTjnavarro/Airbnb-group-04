@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DEFAULT_DETAIL_HOUSE, HouseDetail } from 'src/app/models/house-detail';
 import { HouseService } from 'src/app/services/house.service';
 
@@ -10,18 +10,28 @@ import { HouseService } from 'src/app/services/house.service';
 })
 export class HouseDetailComponent implements OnInit {
 
-  houseId: number = 0;
+  houseId: number;
   house: HouseDetail = DEFAULT_DETAIL_HOUSE;
-  constructor(private route: ActivatedRoute, private houseService: HouseService) { }
+  isLoading:boolean;
+  constructor(private ActivatedRoute: ActivatedRoute, private houseService: HouseService, private Router: Router) {
+    this.isLoading = true;
+    this.houseId = Number(this.ActivatedRoute.snapshot.paramMap.get('id'));
+  }
 
   ngOnInit(): void {
-    debugger;
-    this.houseId = this.route.snapshot.paramMap.get('id') ?  Number(this.route.snapshot.paramMap.get('id')) : 0;
-    this.houseService.getHouseById(this.houseId).subscribe(house =>{    
-      this.house = house; 
-    })  
-    
-  
+    this.getDetailHouse(this.houseId);
     }
-   
+
+    private getDetailHouse(id:number){
+      this.houseService.getHouseById(id).subscribe({
+        next: (house:HouseDetail) =>{
+          this.house = house;
+          this.isLoading = false;
+        },
+        error: () =>{
+          this.Router.navigate(['/']);
+        }
+      })  
+    }
+
   }

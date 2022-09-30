@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { HouseDetailRoutingModule } from './house-detail-routing.module';
 import { HouseDetailComponent } from './components/house-detail/house-detail.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -10,8 +11,8 @@ import { HouseDetailComponent } from './components/house-detail/house-detail.com
     HouseDetailComponent
   ],
   imports: [
-    CommonModule,
-    HouseDetailRoutingModule
+    HouseDetailRoutingModule,
+    CommonModule
   ]
 })
 export class HouseDetailModule { }

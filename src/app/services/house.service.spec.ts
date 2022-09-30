@@ -23,7 +23,7 @@ describe('HouseService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('call services', (done:DoneFn)=>{
+  it('call service detail', (done:DoneFn)=>{
     service.getHouseById(id).subscribe({
       next: (resp:HouseDetail)=>{
         expect(resp).toEqual(DEFAULT_DETAIL_HOUSE);
