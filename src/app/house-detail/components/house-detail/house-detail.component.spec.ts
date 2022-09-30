@@ -26,8 +26,5 @@ describe('HouseDetailComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('get house data', ()=>{
-    component.getDetailHouse(DEFAULT_DETAIL_HOUSE._id)
-  });
 
 });

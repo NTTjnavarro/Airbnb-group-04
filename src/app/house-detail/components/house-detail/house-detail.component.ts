@@ -22,7 +22,7 @@ export class HouseDetailComponent implements OnInit {
     this.getDetailHouse(this.houseId);
     }
 
-    getDetailHouse(id:number){
+    private getDetailHouse(id:number){
       this.houseService.getHouseById(id).subscribe({
         next: (house:HouseDetail) =>{
           this.house = house;
