@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
     HouseDetailComponent
   ],
   imports: [
-    HouseDetailRoutingModule,
-    CommonModule
+    CommonModule,
+    HouseDetailRoutingModule
   ]
 })
 export class HouseDetailModule { }

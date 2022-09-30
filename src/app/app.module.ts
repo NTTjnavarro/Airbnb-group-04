@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
-import { HouseDetailModule } from './house-detail/house-detail.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { HouseDetailModule } from './house-detail/house-detail.module';
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
-    HouseDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]
