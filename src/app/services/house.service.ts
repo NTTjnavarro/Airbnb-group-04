@@ -29,11 +29,9 @@ export class HouseService {
             lng: pos.position.lng
           }
         }
-        return this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', body)
+        return this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search', body)
       })
     )
-
-
   }
 
   generateCurrentPosition(): Observable<GeoLocationModel>{

@@ -7,6 +7,7 @@ export type GeoLocationModel = {
     position: position
 }
 
+
 export type getCurrentPosition = {
     coords: {
         latitude: number,
@@ -15,8 +16,8 @@ export type getCurrentPosition = {
 }
 
 export const DEFAULT_POSITION:position = {
-    lat: 41.390205,
-    lng: 2.154007
+    lat: 0,
+    lng: 0
 }
 
 export const DEFAULT_GEO_LOCATION:GeoLocationModel ={
