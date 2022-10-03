@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HouseList } from '../models/house-detail';
-import { HouseService } from '../services/house.service';
 
 @Component({
   selector: 'app-home-card',
@@ -9,16 +8,13 @@ import { HouseService } from '../services/house.service';
 })
 export class HomeCardComponent implements OnInit {
 
-  houseList: HouseList=[];
+  @Input() houseList: HouseList;
 
-  constructor(private HouseService: HouseService) { 
-    this.HouseService.getHousesData().subscribe(houses => this.houseList=houses)
+  constructor() { 
+    this.houseList = [];
   }
 
   ngOnInit(): void {
-    this.HouseService.getHousesData().subscribe(houses => this.houseList=houses)
-    console.log(this.houseList)
-
   }
 
 }
