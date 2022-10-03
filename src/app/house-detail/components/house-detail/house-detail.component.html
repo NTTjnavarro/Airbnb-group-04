@@ -1,89 +1,94 @@
-<div class="grid">
-  <!-- <div class="col-12">
+<div class="main-page">
+  <div class="grid">
+    <!-- <div class="col-12">
   <div class="col-12"> -->
-  <div class="col-12">
-    <h1>{{ house.name }}</h1>
-  </div>
-  <div class="col-8">
-    <span class="detail-link">4,95</span> ·
-    <!-- </div>
+    <div class="col-12">
+      <h1>{{ house.name }}</h1>
+    </div>
+    <div class="col-8">
+      <span class="detail-link">4,95</span> ·
+      <!-- </div>
   <div class="col-1"> -->
-    <span class="detail-link pl-1">65 evaluaciones</span> ·
-    <!-- </div>
+      <span class="detail-link pl-1">65 evaluaciones</span> ·
+      <!-- </div>
   <div class="col-6"> -->
-    <!-- <button class="detail-button-link" type="button"> -->
-    <span class="detail-link pl-1">Rockbridge - Ohio - Estados Unidos</span>
-    <!-- </button> -->
-  </div>
+      <!-- <button class="detail-button-link" type="button"> -->
+      <span class="detail-link pl-1">Rockbridge - Ohio - Estados Unidos</span>
+      <!-- </button> -->
+    </div>
 
-  <div class="col-2">
-    <!-- <button class="detail-button-link" type="button"> -->
-    <span class="detail-link">Compartir</span>
-    <!-- </button> -->
+    <div class="col-2">
+      <!-- <button class="detail-button-link" type="button"> -->
+      <span class="detail-link">Compartir</span>
+      <!-- </button> -->
+    </div>
+    <div class="col-2">
+      <!-- <button class="detail-button-link" type="button"> -->
+      <span class="detail-link">Guardar</span>
+      <!-- </button> -->
+    </div>
+    <!-- </div> -->
   </div>
-  <div class="col-2">
-    <!-- <button class="detail-button-link" type="button"> -->
-    <span class="detail-link">Guardar</span>
-    <!-- </button> -->
-  </div>
-  <!-- </div> -->
-</div>
-<div class="grid">
-  <div class="col-6">
-    <img class="w-100" src="{{ house.images.picture_url }}" />
-  </div>
-  <!-- <div class="col-6">
+  <div class="grid">
+    <div class="col-6">
+      <img class="w-100" src="{{ house.images.picture_url }}" />
+    </div>
+    <!-- <div class="col-6">
     <div class="grid">
       <div style="background-color: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-12">12</div>
     </div>
   </div> -->
-</div>
+  </div>
 
-<div class="grid">
-  <div class="col-8">
-    <div class="grid">
-      <div class="col-10">
-        <div class="grid">
-          <div class="col-12">
-            <h2>{{ house.room_type }} Anfitrión: {{ house.host.host_name }}</h2>
-          </div>
-          <div class="col-12" class="text-20">
-            {{ house.accommodates }} viajeros - {{ house.bedrooms }} dormitorios
-            - {{ house.beds }} camas -
-            {{ house.bathrooms.$numberDecimal | number: "1.0-0" }} baños
-          </div>
-          <!-- <div style="background-color: blue" class="col-6">6</div>
+  <div class="grid">
+    <div class="col-8">
+      <div class="grid">
+        <div class="col-10">
+          <div class="grid">
+            <div class="col-12">
+              <h2>
+                {{ house.room_type }} Anfitrión: {{ house.host.host_name }}
+              </h2>
+            </div>
+            <div class="col-12" class="text-20">
+              {{ house.accommodates }} viajeros -
+              {{ house.bedrooms }} dormitorios - {{ house.beds }} camas -
+              {{ house.bathrooms.$numberDecimal | number: "1.0-0" }} baños
+            </div>
+            <!-- <div style="background-color: blue" class="col-6">6</div>
           <div style="border-color: white; background: blue" class="col-6">6</div>
           <div style="border-color: white; background: blue" class="col-12">12</div> -->
+          </div>
         </div>
-      </div>
-      <div class="col-2">
-        <img class="icon-user" src="{{ house.host.host_url }}" />
-      </div>
-      <!-- <div style="background-color: blue" class="col-6">6</div>
+        <div class="col-2">
+          <img class="icon-user" src="{{ house.host.host_url }}" />
+        </div>
+        <!-- <div style="background-color: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-12">12</div> -->
-    </div>
-    <section>
-      <div class="font-weight-bold">Cancelacion gratuita durante 48 horas</div>
-      <div class="col-11">
-        {{ house.description }}
       </div>
-    </section>
+      <section>
+        <div class="font-weight-bold">
+          Cancelacion gratuita durante 48 horas
+        </div>
+        <div class="col-11">
+          {{ house.description }}
+        </div>
+      </section>
+    </div>
+    <div class="col-4">
+      <app-reserve [data]="house"></app-reserve>
+    </div>
   </div>
-  <div class="col-4">
-    <app-reserve [data]="house"></app-reserve>
+
+  <div class="grid">
+    <app-evaluations [reviewScore]="house"></app-evaluations>
   </div>
+
+  <p-button label="Click"></p-button>
 </div>
-
-<div class="grid">
-  <app-evaluations [reviewScore]="house"></app-evaluations>
-</div>
-
-<p-button label="Click"></p-button>
-
 <!-- <div *ngIf="!isLoading">
   {{ house.name }}
   <p-button label="Click"></p-button>

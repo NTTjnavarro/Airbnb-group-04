@@ -4,6 +4,7 @@ import { Observable, switchMap } from 'rxjs';
 import { HouseDetail } from 'src/app/models/house-detail';
 import { environment } from 'src/environments/environment';
 import { GeoLocationModel } from '../models/geoLocation.model';
+import { HouseList } from 'src/app/models/house-detail';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,7 @@ export class HouseService {
 
 
   //TO DO: REFACTOR PLEASE
-  getHousesData(): Observable<HouseDetail[]>{
+  getHousesData(): Observable<HouseList>{
     return this.generateCurrentPosition()
     .pipe(
       switchMap(pos => {
@@ -29,11 +30,9 @@ export class HouseService {
             lng: pos.position.lng
           }
         }
-        return this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', body)
+        return this.httpClient.post<HouseList>(environment.apiUrl + '/search/', body)
       })
     )
-
-
   }
 
   generateCurrentPosition(): Observable<GeoLocationModel>{
