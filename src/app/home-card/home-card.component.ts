@@ -15,6 +15,7 @@ export class HomeCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
 }
