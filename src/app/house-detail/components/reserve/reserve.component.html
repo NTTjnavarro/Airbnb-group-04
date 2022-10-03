@@ -1,1 +1,53 @@
-<p>reserve works!</p>
+<div class="card">
+
+  <div class="card-header">
+
+    {{data.price.$numberDecimal | price }}/Noche
+
+  </div>
+
+  <div class="card-body">
+    <form #formReserve="ngForm">
+
+    <div class="mb-3">
+
+      <label class="form-label">Fecha de entrada</label>
+      <input id="startDate" class="form-control" type="date" [value]="now" required />
+
+    </div>
+
+    <div class="mb-3">
+
+      <label class="form-label">Fecha de salida</label>
+      <input id="endDate" class="form-control" type="date" required />
+    </div>
+
+
+    <div class="mb-3">
+
+      <label class="form-label">Huespedes</label>
+      <select class="form-select" name="pasajeros" ngModel #pasajeros="ngModel" required>
+        <option value="1">1 viajero</option>
+        <option value="2">2 viajeros</option>
+        <option value="3">3 viajeros</option>
+        <option value="4">4 viajeros</option>
+        <option value="5">5 viajeros</option>
+        <option value="6">6 viajeros</option>
+        <option value="7">7 viajeros</option>
+        <option value="8">8 viajeros</option>
+        <option value="9">9 viajeros</option>
+        <option value="10">10 viajeros</option>
+      </select>
+
+    </div>
+
+    <div class="mb-3">
+
+
+      <a class="btn btn-primary" [ngClass]="{'disabled': !formReserve.valid }" href="https://www.airbnb.es/?adults={{pasajeros.value}}">Reservar</a>
+    </div>
+
+  </form>
+
+  </div>
+</div>

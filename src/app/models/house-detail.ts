@@ -65,7 +65,7 @@ export type Availability = {
 }
 
 export type Bathrooms = {
-  $numberDecimal: string;
+  $numberDecimal: number;
 }
 
 export type Host = {
@@ -119,7 +119,7 @@ export const DEFAULT_AVAILABILITY : Availability = {
   availability_90: 0,
 }
 export const DEFAULT_BATHROOMS : Bathrooms = {
-  $numberDecimal: "",
+  $numberDecimal: 0,
 }
 
 export const DEFAULT_HOST : Host = {
