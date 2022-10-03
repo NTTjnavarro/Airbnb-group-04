@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { HomeCardComponent } from './home-card/home-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HouseListComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    HomeCardComponent
   ],
   imports: [
     BrowserModule,
