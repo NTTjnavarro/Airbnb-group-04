@@ -37,17 +37,37 @@ describe('HouseService', () => {
 
   })
 
-  it('get house list', (done:DoneFn)=>{
-    service.getHousesList(DEFAULT_GEO_LOCATION).subscribe({
+  it('should get geo location', (done:DoneFn)=>{
+    spyOn(navigator.geolocation, 'getCurrentPosition').and.callFake((...args: any[]) => {
+      const position = { coords: { latitude: 0, longitude: 0 } };
+      args[0](position);
+    });
+    service.generateCurrentPosition().subscribe({
       next: (resp:GeoLocationModel) =>{
+        console.log(resp)
         expect(resp).toEqual(DEFAULT_GEO_LOCATION);
         done();
       }
     });
 
-    const req = httpTestingController.expectOne(environment.apiUrl+'/search');
-    req.flush(DEFAULT_GEO_LOCATION);
-
   });
+
+  it('should return house list referent to actual location', (done:DoneFn)=>{
+    spyOn(navigator.geolocation, 'getCurrentPosition').and.callFake((...args: any[]) => {
+      const position = { coords: { latitude: 41.095628607058686, longitude: -8.626873272456123 } };
+      args[0](position);
+    });
+    service.getHousesData().subscribe({
+      next: (resp:HouseDetail[]) =>{
+        console.log(resp)
+        expect(resp).toEqual([]);
+        done();
+      }
+    });
+
+    const req = httpTestingController.expectOne(environment.apiUrl+'/search');
+    req.flush([])
+
+  })
 
 });

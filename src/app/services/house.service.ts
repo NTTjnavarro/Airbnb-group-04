@@ -33,8 +33,6 @@ export class HouseService {
         return this.httpClient.post<HouseList>(environment.apiUrl + '/search/', body)
       })
     )
-
-
   }
 
   generateCurrentPosition(): Observable<GeoLocationModel>{
