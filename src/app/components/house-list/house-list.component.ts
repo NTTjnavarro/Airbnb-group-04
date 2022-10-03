@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HouseDetail } from 'src/app/models/house-detail';
+import { HouseDetail, HouseList } from 'src/app/models/house-detail';
 import { HouseService } from 'src/app/services/house.service';
 
 
@@ -11,7 +11,7 @@ import { HouseService } from 'src/app/services/house.service';
 export class HouseListComponent implements OnInit {
 
   public isLoading: boolean = true;
-  private houseList: HouseDetail[] = []
+  public houseList: HouseList = []
 
   constructor(
     private houseService: HouseService

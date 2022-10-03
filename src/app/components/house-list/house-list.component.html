@@ -1,5 +1,1 @@
-<div *ngIf="!isLoading">
-  <a [routerLink]="['/detail', 10082422]">Listado</a>
-  <p>house-list works!</p>
-
-</div>
+<app-home-card *ngIf="!isLoading" [houseList]="houseList"></app-home-card>
