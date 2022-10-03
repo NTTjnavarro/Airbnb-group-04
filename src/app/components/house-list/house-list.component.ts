@@ -10,6 +10,7 @@ import { HouseService } from 'src/app/services/house.service';
 })
 export class HouseListComponent implements OnInit {
 
+  public isLoading: boolean = true;
   private houseList: HouseDetail[] = []
 
   constructor(
@@ -17,7 +18,7 @@ export class HouseListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.houseService.getHousesList().subscribe(p => this.houseList = p)
+    this.houseService.getHousesData().subscribe(houseList => this.houseList = houseList)
   }
 
 }
