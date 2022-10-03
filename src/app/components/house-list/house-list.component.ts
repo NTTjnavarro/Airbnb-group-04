@@ -19,7 +19,10 @@ export class HouseListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.houseService.getHousesData().subscribe(houseList => this.houseList = houseList)
+    this.houseService.getHousesData().subscribe((houseList) => {
+      this.houseList = houseList;
+      this.isLoading = false;
+    });
   }
 
 }
