@@ -9,12 +9,14 @@ import { AppComponent } from './app.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { SharedModule } from './shared/shared.module';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HouseListComponent,
     SearchPageComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,

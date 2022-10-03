@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, switchMap } from 'rxjs';
 import { HouseDetail } from 'src/app/models/house-detail';
 import { environment } from 'src/environments/environment';
-import { GeoLocationModel } from '../models/geoLocation.model';
+import { GeoLocationModel } from '../models/geo-location.model';
 
 @Injectable({
   providedIn: 'root',
