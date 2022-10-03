@@ -47,12 +47,12 @@
       <div class="col-10">
         <div class="grid">
           <div class="col-12">
-            <h1>{{ house.space }}</h1>
+            <h2>{{ house.room_type }} Anfitrión: {{ house.host.host_name }}</h2>
           </div>
           <div class="col-12" class="text-20">
             {{ house.accommodates }} viajeros - {{ house.bedrooms }} dormitorios
-            - {{ house.beds }} - baños
-            {{ house.bathrooms.$numberDecimal }}
+            - {{ house.beds }} camas -
+            {{ house.bathrooms.$numberDecimal | number: "1.0-0" }} baños
           </div>
           <!-- <div style="background-color: blue" class="col-6">6</div>
           <div style="border-color: white; background: blue" class="col-6">6</div>
@@ -60,28 +60,26 @@
         </div>
       </div>
       <div class="col-2">
-        <img class="icon-user" src="{{ house.host.host_thumbnail_url }}" />
+        <img class="icon-user" src="{{ house.host.host_url }}" />
       </div>
       <!-- <div style="background-color: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-6">6</div>
       <div style="border-color: white; background: blue" class="col-12">12</div> -->
     </div>
     <section>
-      <div>Cancelacion gratuita durante 48 horas</div>
+      <div class="font-weight-bold">Cancelacion gratuita durante 48 horas</div>
       <div class="col-11">
         {{ house.description }}
       </div>
     </section>
   </div>
-  <div style="border-color: white; background: red" class="col-4">
+  <div class="col-4">
     <app-reserve [data]="house"></app-reserve>
   </div>
 </div>
 
 <div class="grid">
-  <div class="col-12"></div>
-  <div class="col-6"></div>
-  <div class="col-6"></div>
+  <app-evaluations [reviewScore]="house"></app-evaluations>
 </div>
 
 <p-button label="Click"></p-button>
