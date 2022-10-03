@@ -1,0 +1,14 @@
+.detail-title {
+    font-size: 1em;
+    font-weight:inherit;
+    line-height:inherit;
+    display: inline;
+}
+
+.detail-link{
+    font-weight: 600;
+    cursor:pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+}
