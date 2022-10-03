@@ -10,6 +10,8 @@ import { HouseService } from 'src/app/services/house.service';
 })
 export class HouseListComponent implements OnInit {
 
+  public isLoading: boolean = true;
+
   private houseList: HouseDetail[] = []
 
   constructor(

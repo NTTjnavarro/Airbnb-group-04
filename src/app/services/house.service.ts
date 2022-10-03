@@ -17,13 +17,23 @@ export class HouseService {
       return this.httpClient.get<HouseDetail>(environment.apiUrl+'/listings/'+id);
   }
 
+
+  //TO DO: REFACTOR PLEASE
   getHousesData(): Observable<HouseDetail[]>{
-    return this.generateCurrentPosition().pipe(
-      switchMap(
-        position => this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', position)
-      )
+    return this.generateCurrentPosition()
+    .pipe(
+      switchMap(pos => {
+        const body = {
+          position: {
+            lat: pos.position.lat,
+            lng: pos.position.lng
+          }
+        }
+        return this.httpClient.post<HouseDetail[]>(environment.apiUrl + '/search/', body)
+      })
     )
-    
+
+
   }
 
   generateCurrentPosition(): Observable<GeoLocationModel>{
