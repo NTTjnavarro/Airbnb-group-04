@@ -7,12 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HouseListComponent,
-    SearchPageComponent
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +21,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     BrowserAnimationsModule,    
     AppRoutingModule,
     HttpClientModule,
+    SharedModule
   ],
 
   providers: [],

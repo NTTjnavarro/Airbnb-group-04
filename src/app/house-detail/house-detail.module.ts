@@ -8,6 +8,7 @@ import { MapComponent } from './components/map/map.component';
 import { HostComponent } from './components/host/host.component';
 
 import {ButtonModule} from 'primeng/button';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ButtonModule} from 'primeng/button';
   imports: [
     CommonModule,
     HouseDetailRoutingModule,
-    ButtonModule
+    ButtonModule,
+    SharedModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
