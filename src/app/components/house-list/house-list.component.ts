@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GeoLocationModel } from 'src/app/models/geoLocation.model';
+import { HouseDetail } from 'src/app/models/house-detail';
+import { HouseService } from 'src/app/services/house.service';
+
 
 @Component({
   selector: 'app-house-list',
@@ -8,28 +10,15 @@ import { GeoLocationModel } from 'src/app/models/geoLocation.model';
 })
 export class HouseListComponent implements OnInit {
 
-  private currentPosition: GeoLocationModel = {
-    position: {
-      lat: 0,
-      lng: 0
-    }
-  }
+  public isLoading: boolean = true;
+  private houseList: HouseDetail[] = []
 
-  constructor() { }
+  constructor(
+    private houseService: HouseService
+  ) { }
 
   ngOnInit(): void {
-    this.generateCurrentPosition()
-  }
-
-  generateCurrentPosition(){
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.currentPosition = {
-        position:{
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        }
-      }
-    })
+    this.houseService.getHousesData().subscribe(houseList => this.houseList = houseList)
   }
 
 }

@@ -4,6 +4,7 @@ import { DEFAULT_DETAIL_HOUSE, HouseDetail } from '../models/house-detail';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { HouseService } from './house.service';
+import { DEFAULT_GEO_LOCATION, GeoLocationModel } from '../models/geoLocation.model';
 
 describe('HouseService', () => {
   let service: HouseService;
@@ -35,5 +36,18 @@ describe('HouseService', () => {
     req.flush(DEFAULT_DETAIL_HOUSE)
 
   })
+
+  it('get house list', (done:DoneFn)=>{
+    service.getHousesList(DEFAULT_GEO_LOCATION).subscribe({
+      next: (resp:GeoLocationModel) =>{
+        expect(resp).toEqual(DEFAULT_GEO_LOCATION);
+        done();
+      }
+    });
+
+    const req = httpTestingController.expectOne(environment.apiUrl+'/search');
+    req.flush(DEFAULT_GEO_LOCATION);
+
+  });
 
 });
