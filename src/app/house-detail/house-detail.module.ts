@@ -9,6 +9,7 @@ import { HostComponent } from './components/host/host.component';
 
 import {ButtonModule} from 'primeng/button';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { SharedModule } from '../shared/shared.module';
     HouseDetailRoutingModule,
     ButtonModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

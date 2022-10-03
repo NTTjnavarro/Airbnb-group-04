@@ -7,26 +7,27 @@
   </div>
 
   <div class="card-body">
+    <form #formReserve="ngForm">
 
     <div class="mb-3">
 
       <label class="form-label">Fecha de entrada</label>
-      <input id="startDate" class="form-control" type="date" [value]="now" />
+      <input id="startDate" class="form-control" type="date" [value]="now" required />
 
     </div>
 
     <div class="mb-3">
 
       <label class="form-label">Fecha de salida</label>
-      <input id="endDate" class="form-control" type="date" />
+      <input id="endDate" class="form-control" type="date" required />
     </div>
 
 
     <div class="mb-3">
 
       <label class="form-label">Huespedes</label>
-      <select class="form-select" aria-label="Default select example">
-        <option selected>1 viajero</option>
+      <select class="form-select" name="pasajeros" ngModel #pasajeros="ngModel" required>
+        <option value="1">1 viajero</option>
         <option value="2">2 viajeros</option>
         <option value="3">3 viajeros</option>
         <option value="4">4 viajeros</option>
@@ -42,10 +43,11 @@
 
     <div class="mb-3">
 
-      <button type="button" class="btn btn-primary">Reservar</button>
 
+      <a class="btn btn-primary" [ngClass]="{'disabled': !formReserve.valid }" href="https://www.airbnb.es/?adults={{pasajeros.value}}">Reservar</a>
     </div>
 
+  </form>
 
   </div>
 </div>
