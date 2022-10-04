@@ -1,4 +1,4 @@
-<div class="main-page">
+<div *ngIf="!isLoading" class="main-page">
   <div class="grid">
     <!-- <div class="col-12">
   <div class="col-12"> -->
@@ -70,9 +70,7 @@
       <div style="border-color: white; background: blue" class="col-12">12</div> -->
       </div>
       <section>
-        <div class="font-weight-bold">
-          Cancelacion gratuita durante 48 horas
-        </div>
+        <div class="bold-text">Cancelacion gratuita durante 48 horas</div>
         <div class="col-11">
           {{ house.description }}
         </div>
@@ -83,8 +81,11 @@
     </div>
   </div>
 
-  <div class="grid">
-    <app-evaluations [reviewScore]="house"></app-evaluations>
+  <div *ngIf="!isLoading" class="grid">
+    <app-evaluations
+      [reviewScore]="house.review_scores"
+      [reviews]="house.reviews"
+    ></app-evaluations>
   </div>
 
   <p-button label="Click"></p-button>

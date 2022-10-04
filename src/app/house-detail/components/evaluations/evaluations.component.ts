@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DEFAULT_DETAIL_HOUSE, DEFAULT_REVIEW_SCORES, HouseDetail, ReviewScores } from 'src/app/models/house-detail';
+import { DEFAULT_DETAIL_HOUSE, DEFAULT_REVIEW, DEFAULT_REVIEW_SCORES, HouseDetail, Review, ReviewScores } from 'src/app/models/house-detail';
 
 @Component({
   selector: 'app-evaluations',
@@ -7,13 +7,15 @@ import { DEFAULT_DETAIL_HOUSE, DEFAULT_REVIEW_SCORES, HouseDetail, ReviewScores 
   styleUrls: ['./evaluations.component.css']
 })
 export class EvaluationsComponent implements OnInit {
-  @Input() reviews: HouseDetail = DEFAULT_DETAIL_HOUSE;
+  @Input() reviewScore: ReviewScores = DEFAULT_REVIEW_SCORES;
+  @Input() reviews: Review[] = [];
   // @Input() reviewScore: any;
-  constructor() { }
+  constructor() {
+    console.log('REVIEWS SCORE', this.reviewScore);
+   }
 
-  ngOnInit(): void {
-    console.log(this.reviews);
-    // console.log(this.reviewScore);
-  }
+   ngOnInit() {
+    console.log('REVIEWS SCORE', this.reviewScore);
+   }
 
 }

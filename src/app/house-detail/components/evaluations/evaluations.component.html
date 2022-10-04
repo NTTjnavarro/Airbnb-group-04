@@ -1,3 +1,27 @@
-<div style="background-color: red" class="col-12"></div>
-<div style="background-color: blue" class="col-6"></div>
-<div style="background-color: yellow" class="col-6"></div>
+<div style="margin-top: 20px; border-bottom: 1px solid"></div>
+<div style="margin-top: 20px" class="grid">
+  <div style="background-color: red" class="col-12"></div>
+  <div style="background-color: blue" class="col-6">
+    <!-- <span></span>
+  <span></span>
+  <span></span> -->
+  </div>
+  <div style="background-color: yellow" class="col-6">
+    <!-- <span></span>
+  <span></span>
+  <span></span> -->
+  </div>
+</div>
+<div style="border-bottom: 1px solid"></div>
+<div style="margin-top: 20px" class="grid">
+  <div *ngFor="let review of reviews" class="col-6 grid">
+    <div class="col-12">
+      <div class="col-12 bold-text">
+        {{ review.reviewer_name }}
+      </div>
+      <div class="col-12">
+        {{ review.comments }}
+      </div>
+    </div>
+  </div>
+</div>

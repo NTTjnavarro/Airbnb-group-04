@@ -33,7 +33,7 @@ export type  HouseDetail = {
   price: Bathrooms;
   property_type: string;
   review_scores: ReviewScores;
-  reviews: any[];
+  reviews: Review[];
   room_type: string;
   security_deposit: Bathrooms;
   space: string;
@@ -92,7 +92,23 @@ export type Images = {
   xl_picture_url: string;
 }
 
-export type ReviewScores = {}
+export type ReviewScores = {
+  review_scores_accuracy: number,
+  review_scores_cleanliness: number,
+  review_scores_checkin: number,
+  review_scores_communication: number,
+  review_scores_location: number,
+  review_scores_value: number,
+  review_scores_rating: number
+}
+
+export type Review = {
+  _id: string,
+  date: string,
+  listing_id: string,
+  reviewer_name: string,
+  comments: string
+}
 
 ////CONSTANTS////
 
@@ -145,8 +161,22 @@ export const DEFAULT_IMAGES : Images = {
   thumbnail_url: "",
   xl_picture_url: "",
 }
-export const DEFAULT_REVIEW_SCORES : ReviewScores = {}
-
+export const DEFAULT_REVIEW_SCORES : ReviewScores = {
+  review_scores_accuracy: 0,
+  review_scores_cleanliness: 0,
+  review_scores_checkin: 0,
+  review_scores_communication: 0,
+  review_scores_location: 0,
+  review_scores_value: 0,
+  review_scores_rating: 0
+}
+export const DEFAULT_REVIEW : Review = {
+_id: "",
+date: "",
+listing_id: "",
+reviewer_name: "",
+comments: "",
+}
 export const DEFAULT_DETAIL_HOUSE : HouseDetail = {
   _id: 10082422,
   access: "",

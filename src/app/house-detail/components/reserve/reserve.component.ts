@@ -12,6 +12,7 @@ export class ReserveComponent {
   now: string;
 
   constructor(private UtilsService: UtilsService) {
+    console.log('DATA', this.data)
     this.now = this.getDate();
   }
 
