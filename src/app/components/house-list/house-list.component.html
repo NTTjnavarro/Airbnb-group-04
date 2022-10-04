@@ -1,7 +1,8 @@
 <app-search-bar></app-search-bar>
 <app-home-card class="row mt-5 text-center" *ngIf="!isLoading" [houseList]="houseList"></app-home-card>
-<div *ngIf="houseList.length == 0" class="error">
+<div *ngIf="houseList.length == 0 && !isLoading" class="error">
   <h3>Lo sentimos, no se han encontrado alojamientos desde su localización.</h3>
 </div>
 
 
+<app-spinner class="text-center" *ngIf="isLoading" [color]="'danger'"></app-spinner>
