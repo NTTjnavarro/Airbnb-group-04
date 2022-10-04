@@ -10,18 +10,20 @@ import { HouseListComponent } from './components/house-list/house-list.component
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeCardComponent } from './home-card/home-card.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HouseListComponent,
     SearchPageComponent,
-    HomeCardComponent
+    HomeCardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     SharedModule,

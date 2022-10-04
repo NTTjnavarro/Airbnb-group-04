@@ -1,0 +1,29 @@
+.search-bar{
+  position: sticky;
+  height: 50px;
+  min-width: 100%;
+  max-width: 100%;
+  display: flex;
+}
+
+.logo{
+  height: 40px;
+}
+
+.container-end{
+  padding: 1%;
+  box-sizing: border-box;
+  width: 20%;
+}
+
+.container{
+  padding: 1%;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+.input{
+  display: flex;
+  width: 90%;
+}
+

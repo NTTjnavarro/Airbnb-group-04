@@ -4,7 +4,7 @@ import { DEFAULT_DETAIL_HOUSE, HouseDetail } from '../models/house-detail';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { HouseService } from './house.service';
-import { DEFAULT_GEO_LOCATION, GeoLocationModel } from '../models/geoLocation.model';
+import { DEFAULT_GEO_LOCATION, GeoLocationModel } from '../models/geo-location.model';
 
 describe('HouseService', () => {
   let service: HouseService;
