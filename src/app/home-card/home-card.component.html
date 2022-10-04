@@ -1,11 +1,11 @@
 <div *ngFor="let h of houseList">
     <div class="card" style="width: 18rem;">
-        <img src="{{h.images.picture_url}}" class="card-img-top" alt="...">
+        <img src="{{h.images.picture_url}}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{h.name}}</h5>
           <p class="card-text">{{h.description}}</p>
           <p class="card-text">{{h.price.$numberDecimal}}€</p>
-          <a href="#" class="btn btn-primary">Detalles</a>
+          <a routerLink="/detail/{{h._id}}" class="btn btn-primary">Ver</a>
         </div>
       </div>
 </div>
