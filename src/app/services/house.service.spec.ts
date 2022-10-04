@@ -65,7 +65,7 @@ describe('HouseService', () => {
       }
     });
 
-    const req = httpTestingController.expectOne(environment.apiUrl+'/search');
+    const req = httpTestingController.expectOne(environment.apiUrl+'/search/');
     req.flush([])
 
   })
