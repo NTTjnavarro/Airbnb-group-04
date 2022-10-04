@@ -1,5 +1,4 @@
-<div *ngFor="let h of houseList">
-    <div class="card" style="width: 18rem;">
+    <div class="card col-lg-3 col-sm-4 p-1" *ngFor="let h of houseList">
         <img src="{{h.images.picture_url}}" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{h.name}}</h5>
@@ -8,4 +7,3 @@
           <a routerLink="/detail/{{h._id}}" class="btn btn-primary">Ver</a>
         </div>
       </div>
-</div>
