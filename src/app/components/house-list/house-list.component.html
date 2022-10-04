@@ -1,3 +1,8 @@
 <app-search-bar></app-search-bar>
-<app-home-card *ngIf="!isLoading" [houseList]="houseList"></app-home-card>
+<div class="container">
+  <app-home-card *ngIf="!isLoading" [houseList]="houseList"></app-home-card>
+  <div *ngIf="houseList.length == 0" class="error">
+    <h3>Lo sentimos, no se han encontrado alojamientos desde su localización.</h3>
+  </div>
+</div>
 
