@@ -1,27 +1,32 @@
 <div style="margin-top: 20px; border-bottom: 1px solid"></div>
-<div style="margin-top: 20px" class="grid">
-  <div style="background-color: red" class="col-12"></div>
-  <div style="background-color: blue" class="col-6">
-    <!-- <span></span>
-  <span></span>
-  <span></span> -->
+<div *ngIf="reviews?.length">
+  <div style="margin-top: 20px" class="grid">
+    <div class="bold-text col-12">4,95 - 65 evaluaciones</div>
+    <div class="col-6">
+      <div>Limpieza - {{ reviewScore.review_scores_cleanliness }}</div>
+      <div>Comunicacion - {{ reviewScore.review_scores_communication }}</div>
+      <div>Llegada - {{ reviewScore.review_scores_checkin }}</div>
+    </div>
+    <div class="col-6">
+      <div>Veracidad - {{ reviewScore.review_scores_accuracy }}</div>
+      <div>Ubiación - {{ reviewScore.review_scores_location }}</div>
+      <div>Calidad - {{ reviewScore.review_scores_value }}</div>
+    </div>
   </div>
-  <div style="background-color: yellow" class="col-6">
-    <!-- <span></span>
-  <span></span>
-  <span></span> -->
-  </div>
-</div>
-<div style="border-bottom: 1px solid"></div>
-<div style="margin-top: 20px" class="grid">
-  <div *ngFor="let review of reviews" class="col-6 grid">
-    <div class="col-12">
-      <div class="col-12 bold-text">
-        {{ review.reviewer_name }}
-      </div>
+  <div style="border-bottom: 1px solid"></div>
+  <div style="margin-top: 20px" class="grid">
+    <div *ngFor="let review of reviews" class="col-6 grid">
       <div class="col-12">
-        {{ review.comments }}
+        <div class="col-12 bold-text">
+          {{ review.reviewer_name }}
+        </div>
+        <div class="col-12">
+          {{ review.comments }}
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="!reviews?.length">
+  <h2>No existen comentarios</h2>
 </div>
